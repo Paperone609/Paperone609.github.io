@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Krona+One&family=Lobster&family=Zen+Dots&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/12b33c19fa.js" crossorigin="anonymous"></script>    
+  
+  <style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url('Noonecares.jpg');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+   
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.nav-bar {
+    background-color: rgba(235, 86, 203, 0);
+    overflow: hidden;
+    margin-right: 3vw;
+    margin-top: 10px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.nav-bar a {
+    padding: 1vw;
+    color: black;
+    text-align: center;
+    font-size: 80%;
+    text-decoration: none;
+    font-family: 'Zen Dots', cursive;
+    margin-top: -20px;
+    display: inline-block;
+    position: sticky;
+}
+
+.nav-bar a:hover {
+    color: rgb(255, 88, 180);
+}
+
+.wrapper {
+    background-color: rgba(0, 0, 0, 0) ;
+}
+
+
+.wrapper h1 {
+    padding-left: 5vw;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Krona One', sans-serif;
+    font-size: 125%;
+    color: rgb(58, 0, 53);
+    -webkit-text-stroke: 2px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0) ;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- This is one of the few easter eggs that you found congrats-->
+
+<div class="bgimg">
+
+  <div class="nav">
+    <div class="wrapper">
+    <a href="index.html" style="text-decoration: none;"><h1> RTPM<br>DSHS </h1></a>
+    </div>
+
+    <div class="nav-bar">
+        <a  href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="faculty.html">Staff</a>
+        <a href="countdown.html">Countdown</a>
+    </div> 
+</div>
+
+  <div class="middle">
+    <h1 style="color: rgb(187, 0, 0);">Merry Christmas</h1>
+    <hr>
+    <p id="demo">35 days</p>
+  </div>
+  <div class="bottomleft">
+    <p>Pete Mabalod</p>
+  </div>
+</div>
+
+<script>
+  // Set the date we're counting down to
+var countDownDate = new Date("Dec 25, 2021 24:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</body>
+</html>
