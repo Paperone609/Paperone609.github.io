@@ -107,7 +107,7 @@ body {
     text-align: center;
     font-family: 'Krona One', sans-serif;
     margin-top: 18rem;
-    font-size: clamp(20px, 3rem, 15rem);
+    font-size: clamp(20px, 3rem, 8rem);
 }
 
 .section {
