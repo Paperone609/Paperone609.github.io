@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Lato:wght@300&display=swap');
 
-* {
+html {
     box-sizing: border-box;
 }
 
@@ -130,7 +130,8 @@ body {
     text-align: center;
     font-family: 'Krona One', sans-serif;
     margin-top: 80px;
-    font-size: clamp(20px, 55px, 80px);
+    font-size: clamp(20px, 5vw, 80px);
+    color: white;
 }
 
 .section {
@@ -203,23 +204,33 @@ body {
     box-sizing: inherit;
 }
 /* Three columns side by side */
+
+
 .column {
     float: left;
-    width: 33.3%;
+    width: 33%;
     margin-bottom: 16px;
     padding: 0 8px;
+    
 }
   
   /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
   
   /* Add some shadows to create a card effect */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgb(80, 78, 78);
+    background-color: white;
 }
   
   /* Some left and right padding inside the container */
   .container {
-    padding: 0 16px;
+    padding: 0px 16px;
 }
   
   /* Clear floats */
@@ -242,19 +253,12 @@ body {
     background-color: #000;
     text-align: center;
     cursor: pointer;
-    width: 100%;
   }
   
   .button:hover {
     background-color: #555;
   }
 
-img {
-      width: 100%;
-      border: 0.5 solid black;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-}
 
 .name {
       color: white;
@@ -265,5 +269,47 @@ img {
       color: white;
 }
 
+.none {
+    display: none;
+}
 
+.lyrics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    text-align: center;
 
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background-color: #F5449D;
+    margin-bottom: 30px;
+    font-family: Pangolin, cursive;
+    stroke: black;
+    stroke-width: 10px;
+    color: white;
+}
+
+.fbpage {
+    display: flex;
+    font-size: 32px;
+    font-family: "Krona One", sans-serif;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    color: white;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+iframe {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
