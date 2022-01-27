@@ -1,7 +1,31 @@
-<!DOCTYPE html>
+<?php
+    $message_sent = false;
+    if(isset($_POST['email']) && $_POST['email'] != ''){
 
-
-
+      if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+        //submit the form
+        $user = $_POST['name'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $usermessage = $_POST['message'];
+    
+        $to = "peter.a.mabalod@gmail.com";
+        $body = "";
+    
+        $body .= "From: ".$user. "\r\n";
+        $body .= "Email: ".$email. "\r\n";
+        $body .= "Subject: ".$subject. "\r\n";
+        $body .= "Message: ".$usermessage. "\r\n";
+    
+    
+        mail($to, $subject, $body);
+        $message_sent = true;
+      }
+      
+      
+    }
+    
+?>
 
 <html lang="en">
 <head>
@@ -14,6 +38,20 @@
 </head>
 <body>
     
+    <?php
+    if ($message_sent):
+      header("Location:thankyou.html");
+    ?>
+    
+    
+    
+        
+    
+    <?php
+    else:
+    ?>
+
+
     <nav class="navbar">
         <div class="brand-title">RTPM<br>DSHS</div>
         <a href="#" class="toggle-button">
@@ -86,6 +124,10 @@
               <span>Email</span> 
             </div>
             <div class="inputbox">
+              <input type="text" name="subject" required="required">
+              <span>Subject</span> 
+            </div>
+            <div class="inputbox">
               <textarea name="message" required="required"></textarea>
               <span>Type your message...</span> 
             </div>
@@ -120,5 +162,8 @@
           </p>
       </section>
       <script src="script.js"></script>
+      <?php
+    endif;
+    ?>
 </body>
 </html>
